@@ -1,23 +1,14 @@
-import logo from './logo.svg';
+import React from 'react'
+import Board from './components/Board';
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const n = parseInt(window.prompt('Enter the value of n'));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"  >
+      <Board size={ (n > 4 && n != undefined) ? n : 5 } />
     </div>
   );
 }
