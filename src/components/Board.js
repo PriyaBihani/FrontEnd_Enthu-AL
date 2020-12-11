@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Controls from './Controls'
+import Moves from './Moves'
 import Grid from './Grid'
 
 const Board = ({ size }) => {
@@ -72,11 +73,17 @@ const Board = ({ size }) => {
 
     }
 
-    return <div>
-        <Grid  curPos={curPos} size={size} addresses={addresses} />
-        <br/>
-        <Controls handleKeyPress={handleKeyPress}/>
+    return(
+    <div className="board">
+        <div>
+            <Moves moves={moves}/>
+            <br/>
+            <Grid  curPos={curPos} size={size} addresses={addresses} />
+            <br/>
+            <Controls handleKeyPress={handleKeyPress}/>
+        </div>
     </div>
+    )
 
 }
 

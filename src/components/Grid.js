@@ -6,7 +6,7 @@ import turtle from '../assets/turtle.svg'
 const Grid = ({ size, addresses, curPos }) => {
     
     return (
-        <>
+        <div>
             {
                 [...Array(size)].map((re, r) =>
                     <div className="row" key={r}>
@@ -28,7 +28,7 @@ const Grid = ({ size, addresses, curPos }) => {
                     </div>
                 )
             }
-        </>
+        </div>
     )
 }
 
