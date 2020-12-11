@@ -4,12 +4,14 @@ import Moves from './Moves'
 import Grid from './Grid'
 
 const Board = ({ size }) => {
+    // Defining center
     const center = Math.ceil(size / 2 - 1) * size + Math.ceil(size / 2);
 
-    const [curPos, setCurPos] = useState(center)
-    const [addresses, setAddresses] = useState()
-    const [moves, setMoves] = useState(0);
+    const [curPos, setCurPos] = useState(center) // Current Position of Mario
+    const [addresses, setAddresses] = useState() // Positions of Turtles
+    const [moves, setMoves] = useState(0); // Total No. of moves
 
+    // Generating random Addresses(positions) 
     const createAddresses = () => {
         let i = 0;
         let array = [];
@@ -29,14 +31,14 @@ const Board = ({ size }) => {
         createAddresses();
     }, [])
 
+    // Checking if user got out of the grid and updating postions of Player
     const checkAndSetPos = (pos) => {
         if(pos >= 1 && pos <= (size*size)){
             setCurPos(pos)
-        }else{
-            window.alert("Not a right move")
         }
     }
 
+    // Removing the turtles when Player got to their positions
     const removeTurtles = (pos) => {
         const index = addresses.indexOf(pos)
         if( index !== -1 ){
@@ -47,6 +49,7 @@ const Board = ({ size }) => {
         }
     }
 
+    // Handling Key arrows inputs
     const handleKeyPress = (key) =>{
         setMoves(moves+1)
 

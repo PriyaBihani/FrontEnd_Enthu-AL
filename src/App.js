@@ -5,6 +5,7 @@ import './App.css';
 
 const App = () => {
 
+  // Taking user input
   const n = parseInt(window.prompt('Enter the value of n'));
 
   return (

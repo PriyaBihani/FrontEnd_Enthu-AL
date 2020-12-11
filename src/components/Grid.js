@@ -13,11 +13,13 @@ const Grid = ({ size, addresses, curPos }) => {
                         {
                             [...Array(size)].map((ce, c) =>
                                 <div className="box" key={c + r}>
-                                    {
+                                    {/* Putting turtles on randomly generated addresses */}
+                                    {       
                                         addresses && addresses.indexOf((r*size+c)+1) !== -1 &&
                                             <img className="char-image" src={turtle} />
                                         
                                     }
+                                    {/* Putting mario in the center of the grid */}
                                     {
                                         (((r*size)+c)+1) === curPos &&
                                             <img className="char-image" src={mario} />
